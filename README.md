@@ -1,5 +1,5 @@
 # SMART21 Sample App
-This Ionic project is a simple demonstration of creating a mobile App with Smar21 and Ionic.
+This Ionic project is a simple demonstration of creating a mobile App with [Smart21] (http://www.smart21.it/) and Ionic.
 
 # Tutorial 
 ## Install [Ionic](http://ionicframework.com/getting-started/)
