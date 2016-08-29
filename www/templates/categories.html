@@ -1,0 +1,21 @@
+<ion-view view-title="Search">
+
+	<ion-content>
+	
+		<ion-list>
+			<!-- <ion-item ng-repeat="category in categories" class="item-avatar item-icon-right" type="item-text-wrap" href="#/tab/category/{{category.id}}"> -->
+			<!-- <ion-item ng-repeat="category in categories" class="item-avatar item-icon-right" type="item-text-wrap" href="#/tab/categories/aaa"> -->
+			<ion-item ng-repeat="category in categories" class="item-avatar item-icon-right" type="item-text-wrap" ng-click="selectedCategory(category)">
+				<img ng-src="{{getImageUrl(category)}}">
+				<h2>{{category.label}}</h2>
+				<p>{{category.otype}}</p>
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</ion-item>
+			<ion-item ng-if="!categories.length">
+				Nessuna sotto categoria!
+			</ion-item>
+		</ion-list>
+		
+	</ion-content>
+
+</ion-view>

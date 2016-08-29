@@ -1,0 +1,18 @@
+<ion-view view-title="Image">
+	<ion-content class="padding">
+		<h2>Take/Pick Image</h2>
+
+		<!-- <img ng-src="{{srcImage || 'img/dummy.jpg'}}" id="srcImage" width="250 " height="250" style="display: block; margin: 0 auto;"/> -->
+		<img ng-src="{{srcImage || 'img/dummy.jpg'}}" id="srcImage" style="width:100%; height: auto;"/>
+		<br/>
+		<button class="button button-full button-positive" ng-click="takeImage()">
+			Take Image
+		</button>
+
+		<button class="button button-full button-positive" ng-click="pickImage()">
+			Pick from gallery
+		</button><br/>
+		<!-- <img ng-src="{{collection.selectedImage}}" style="width:100%; height: auto;"/> -->
+		
+	</ion-content>
+</ion-view>

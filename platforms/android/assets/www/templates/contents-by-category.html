@@ -1,0 +1,33 @@
+<ion-view view-title="Search">
+	<!-- <ion-nav-title>{{content.id}}</ion-nav-title> -->
+	<ion-content>
+	
+		<ion-refresher 
+			pulling-text="Pull to refresh..."
+			on-refresh="doRefresh()">
+		</ion-refresher>
+	
+		<ion-list>
+			<!-- <ion-item ng-repeat="content in contents" class="item-text-wrap" href="#/tab/contents/{{content.id}}"> -->
+			<ion-item ng-repeat="content in contents" class="item-text-wrap" href="#/tab/content-category-detail/{{content.id}}">
+				<img ng-src="{{content.imageURL}}" style="border-radius:0%;">
+				<p>
+					Id: {{ content.id }}<br>
+					Title: {{ content.title }}<br>
+					Description: {{ content.description }}<br>
+				</p>
+			</ion-item>
+			<ion-item ng-if="!contents.length">
+				Nessun risultato!
+			</ion-item>
+		</ion-list>
+		
+		<ion-infinite-scroll 
+			ng-if="!noMoreItemsAvailable" 
+			on-infinite="loadMore()" 
+			distance="10%">
+		</ion-infinite-scroll>
+		
+	</ion-content>
+
+</ion-view>

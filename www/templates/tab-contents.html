@@ -1,0 +1,37 @@
+<ion-view view-title="Contents">
+
+	<ion-content>
+	
+		<ion-refresher 
+			pulling-text="Pull to refresh..."
+			on-refresh="doRefresh()">
+		</ion-refresher>
+		
+		<ion-list>
+			<!-- 
+			<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+			<ion-item ng-repeat="content in contents" class="item-text-wrap" href="#/tab/contents/{{content.id}}">
+			<ion-item collection-repeat="content in contents" class="item-text-wrap" href="#/tab/contents/{{content.id}}">
+			 -->
+			<ion-item ng-repeat="content in contents" class="item-text-wrap" href="#/tab/contents/{{content.id}}">
+				<img ng-src="{{content.imageURL}}" style="border-radius:0%;">
+				<p>
+					Id: {{ content.id }}<br>
+					Title: {{ content.title }}<br>
+					Description: {{ content.description }}<br>
+				</p>
+			</ion-item>
+			<ion-item ng-if="!contents.length">
+				Nessun risultato!
+			</ion-item>
+		</ion-list>
+		
+		<ion-infinite-scroll 
+			ng-if="!noMoreItemsAvailable" 
+			on-infinite="loadMore()" 
+			distance="10%">
+		</ion-infinite-scroll>
+		
+	</ion-content>
+
+</ion-view>
